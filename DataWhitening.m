@@ -19,7 +19,7 @@ figure;
 subplot(2,1,1); plot(M1); title('Premier mélange en fonction du temps'); % figure 
 subplot(2,1,2); plot(M2); title('Second mélange en fonction du temps'); % figure 
 % figure 
-figure; plot(M1,M2, '.'); title('Mélange 2 en fonction du mélange 1'); xlabel('Valeur de M1'); ylabel('Valeur de M2');                     % plot the mixing
+figure; plot(M1,M2, '.'); title('Mélange 2 en fonction du mélange 1 / Matrice originale'); xlabel('Valeur de M1'); ylabel('Valeur de M2');                     % plot the mixing
 set(gca, 'xlim', [-2 2], 'ylim', [-4 4]);            % redefines limits of the graph
 
 % withen the data
@@ -33,23 +33,22 @@ xx=x-mx'*ones(1,1000); % subtract the mean
 xx=2*sq*xx;              
 cov(xx')                 % the covariance is now a diagonal matrix
 figure; 
-plot(xx(1,:));
-figure; 
-plot(xx(2,:));
+subplot(2,1,1); plot(xx(1,:)); title('Premier signal pretrouvé');
+subplot(2,1,2); plot(xx(2,:)); title('Second signal pretrouvé');
 figure;
 plot(xx(1,:), xx(2,:), '.');
 
 % show projections
 % ----------------
 figure; % figure 
-axes('position', [0.2 0.2 0.8 0.8]); plot(xx(1,:), xx(2,:), '.'); title('test'); hold on;
+axes('position', [0.2 0.2 0.8 0.8]); plot(xx(1,:), xx(2,:), '.'); title('Matrice après whitening'); hold on;
 axes('position', [0   0.2 0.2 0.8]); hist(xx(1,:));  set(gca, 'view', [90 90]);
 axes('position', [0.2 0   0.8 0.2]); hist(xx(2,:));
 
 % show projections
 % ----------------
 figure; % figure 
-axes('position', [0.2 0.2 0.8 0.8]); plot(A,B, '.'); hold on;
+axes('position', [0.2 0.2 0.8 0.8]); plot(A,B, '.'); title('Matrice originale'); hold on;
 axes('position', [0   0.2 0.2 0.8]); hist(B);
 set(gca, 'xdir', 'reverse'); set(gca, 'view', [90 90]);
 axes('position', [0.2 0   0.8 0.2]); hist(A);
