@@ -2,5 +2,5 @@
 This program shows how data whitening is performed for ICA algorithm preprocessing
 
 ## CODE TEMPLATE
-This program has totally been written over the MATLAB file found on [ICA for Dummies](http://arnauddelorme.com/ica_for_dummies/).  
-It only gives some minor changes such as the signals that are processed and the printing of information.
+This program has been written over the MATLAB file found on [ICA for Dummies](http://arnauddelorme.com/ica_for_dummies/).  
+It only makes some minor changes: the signals that are processed are different, and the printing of information is modified.
